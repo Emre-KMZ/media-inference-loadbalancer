@@ -8,7 +8,6 @@ struct Worker {
     int port;
     std::string status;
     
-    // Future fields for Day 2 & 3
     std::string loaded_base_model;
     std::vector<std::string> loaded_loras;
     int current_load = 0;
