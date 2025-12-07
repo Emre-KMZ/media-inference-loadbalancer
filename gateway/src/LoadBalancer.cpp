@@ -27,3 +27,15 @@ std::vector<Worker> LoadBalancer::get_workers() {
     std::lock_guard<std::mutex> lock(workers_mutex);
     return workers;
 }
+
+std::optional<Worker> LoadBalancer::get_bestfit_worker() {
+    std::lock_guard<std::mutex> lock(workers_mutex);
+    // TODO: implement a better best-fit selection logic that chooses the worker by:
+    // - has the model loaded already / has enough VRAM
+    // - has the LoRA loaded already / has enough VRAM
+    // - current load
+    if (workers.empty()) {
+        return std::nullopt;
+    }
+    return *workers.begin();
+}
