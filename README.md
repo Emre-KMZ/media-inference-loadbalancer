@@ -4,4 +4,4 @@ a simple load balancer prototype for media specific inference jobs. the idea is,
 
 this is something that i do for learning more on load balancers and infra, i use the repo and comments as my personal notes. 
 
-there are few dumb assumtions ive made here (e.g. read [Worker.h](gateway/src/Worker.h))
+i tried to express my thoght process with some multiline comments in the code. make sure to check those out to see how i think about some design decisions.

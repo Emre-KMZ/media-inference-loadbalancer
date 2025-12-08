@@ -18,5 +18,4 @@ private:
     LoadBalancer load_balancer;
     
     std::chrono::milliseconds estimate_time(const nlohmann::json &j);
-    std::optional<std::string> submit_job(const Worker& worker, const nlohmann::json& payload);
 };

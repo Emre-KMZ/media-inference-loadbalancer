@@ -10,6 +10,8 @@ struct Worker {
     int port;
     std::string status;
     
+    int max_load = 7;
+
     // for now want to have the dumb assumption that each worker can run as much models as they fit in vram
     // why it is dumb:
     // - Compute contention: even if vram is enough, the worker might be overloaded in terms of compute
@@ -23,7 +25,7 @@ struct Worker {
     // this made me think of Yaron Minsky's advice: "make illegal states unrepresentable", what would be a better design here?
     uint64_t vram_total = 0;
 
-    int current_load = 0;
+    int current_load = 0; // number of active jobs
     bool is_healthy = true;
     long last_heartbeat = 0; // inactive for now
 };
